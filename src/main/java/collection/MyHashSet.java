@@ -1,16 +1,19 @@
 package collection;
 
 import java.util.HashSet;
+import java.util.Iterator;
+
 public class MyHashSet {
     HashSet<String> set = new HashSet<String>();
     public void getElement(String element) {
-        while (set.iterator().hasNext()) {
-            if (element.equals(set.iterator().next())) {
+        Iterator iterator = set.iterator();
+        while (iterator.hasNext()) {
+            if (element.equals(iterator.next())) {
                 System.out.println(element);
-            } else {
-                System.out.println("Элемент отсутствует");
+                return;
             }
         }
+        System.out.println("Элемент отсутствует");
     }
     public Boolean hasElement(String element){
         return set.contains(element);

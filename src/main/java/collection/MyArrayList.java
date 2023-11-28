@@ -1,27 +1,36 @@
 package collection;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyArrayList {
-    ArrayList list = new ArrayList();
-    public void getElement(Integer intArL){
+    ArrayList list;
+    public MyArrayList(List listArg) {
+        list = new ArrayList();
+        list.addAll(listArg);
+    }
+
+    public MyArrayList() {
+        list = new ArrayList();
+    }
+
+    public void getElement(Integer num){
         for (int i = 0; i < list.size(); i++) {
-            if (intArL == list.get(i)){
-                System.out.println(intArL);
-            }
-            else {
-                System.out.println("Элемент отсутствует");
+            if (num.equals(list.get(i))){
+                System.out.println(num);
+                return;
             }
         }
+        System.out.println("Элемент отсутствует " + num);
     }
-    public Boolean hasElement(Integer intArL){
-        boolean notHaveElement = list.indexOf(intArL) == -1;
-        return notHaveElement;
+    public Boolean hasElement(Integer num){
+        boolean hasElement = list.indexOf(num) != -1;
+        return hasElement;
     }
-    public void addElement(Integer intArL){
-        list.add(intArL);
+    public void addElement(Integer num){
+        list.add(num);
     }
-    public void deleteElement(Integer intArl){
-        list.remove(intArl);
+    public void deleteElement(Integer num){
+        list.remove(num);
     }
 }

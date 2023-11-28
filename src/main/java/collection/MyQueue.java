@@ -4,26 +4,23 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class MyQueue {
-    Queue<String> queue = new LinkedList<>();
+    Queue<String> queue = new LinkedList<String>();
     public void getElement(String element){
         for (String el: queue) {
            if (el.equals(element)) {
                System.out.println(element);
-           }
-           else {
-               System.out.println("Элемент отсутствует");
+               return;
            }
         }
+        System.out.println("Животное не найдено");
     }
-    public Boolean hasElement(Integer id){
-        return queue.contains(id);
+    public Boolean hasElement(String element){
+        return queue.contains(element);
     }
     public void addTElement(String element){
-
         queue.add(element);
     }
     public void deleteElement(String element){
-
         queue.remove(element);
     }
 

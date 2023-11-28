@@ -2,7 +2,7 @@
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
+!**/src/Main/**/build/
 !**/src/test/**/build/
 
 gradlew
@@ -15,5 +15,5 @@ settings.gradle.kts
 *.iml
 *.ipr
 out/
-!**/src/main/**/out/
+!**/src/Main/**/out/
 !**/src/test/**/out/
